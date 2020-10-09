@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import './App.css';
 // import { v4 as uuidv4 } from 'uuid';
 
@@ -59,13 +59,19 @@ class App extends Component{
         <div className="App">
           <div className="container">
             <Header/>
-            <Route exact path='/' render={props => (
+            <Route exact path="/" render={() => {
+                    return (
+                        <Redirect to="/react_todo" /> 
+                    )
+                }}
+            />
+            <Route path='/react_todo' render={props => (
               <React.Fragment>
                 <AddTodo addTodo = {this.addTodo}/>
               <Todos todos = {this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/>
               </React.Fragment>
             )}/>
-            <Route path='/about' component={About}/>
+            <Route path='/react_todo_about' component={About}/>
           </div>
         </div>
       </Router>
