@@ -1,3 +1,7 @@
+### To view this page on action click this link
+
+(https://eunicocornelius.github.io/react_todo/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
